@@ -1,5 +1,4 @@
 "use server";
-
 import { cookies } from "next/headers";
 
 type ICookie = {
@@ -9,12 +8,14 @@ type ICookie = {
 };
 
 export default async function setCookies({ type, tag, data }: ICookie) {
+  const cookieStore = await cookies();
+
   if (type === "GET") {
-    return await cookies().get(tag)?.value;
+    return cookieStore.get(tag)?.value;
   } else if (type === "SET") {
-    cookies().set(tag, data);
+    cookieStore.set(tag, data);
   } else if (type === "DELETE") {
-    return await cookies().delete(tag);
+    cookieStore.delete(tag);
   } else {
     return "Unknown type.";
   }

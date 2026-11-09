@@ -9,7 +9,9 @@ import {
   AiOutlinePlus,
 } from "react-icons/ai";
 
-import { UserAddress } from "@/lib/types";
+//import { UserAddress } from "@/lib/types";
+
+import { UserAddress as UserAddressType } from "@/lib/types";
 
 import { useAuth } from "@/context/AuthContext";
 import { useModal } from "@/context/ModalContext";
@@ -19,9 +21,9 @@ export default function UserAddress() {
   const { openModal, setAddressType } = useModal();
 
   if (
-    user?.address?.fullName === (null || undefined) ||
-    user?.address?.contactNumber === (null || undefined) ||
-    user?.address?.addressLine === (null || undefined)
+!user?.address?.fullName ||
+!user?.address?.contactNumber ||
+!user?.address?.addressLine
   ) {
     return (
       <div className="flex flex-col p-4 gap-1">
@@ -54,10 +56,7 @@ export default function UserAddress() {
         <div className="flex items-center gap-2 text-gray-700 whitespace-break-spaces break-words">
           <AiOutlineAim color="gray" size={22} />
           <p>
-            {user?.address.addressLine +
-              " " +
-              user?.address.addressLineSecond ??
-              user?.address.addressLineSecond}
+           {`${user?.address?.addressLine ?? ""} ${user?.address?.addressLineSecond ?? ""}`.trim()}
           </p>
         </div>
         <div className="flex items-center gap-2 text-gray-700">

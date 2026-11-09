@@ -14,6 +14,22 @@ import DetailsTab from "./DetailsTab";
 import Gallery from "./Gallery";
 import ProductDetailsSkeleton from "./Skeleton";
 
+if (process.env.NODE_ENV === "development") {
+  console.log({
+    AddToCart,
+    VariantSelector,
+    DetailsTab,
+    Gallery,
+    ProductDetailsSkeleton,
+  });
+}
+else console.log({
+    AddToCart,
+    VariantSelector,
+    DetailsTab,
+    Gallery,
+    ProductDetailsSkeleton,
+  });
 export default function ProductDetails() {
   const router = useRouter();
   const searchParams = useSearchParams();

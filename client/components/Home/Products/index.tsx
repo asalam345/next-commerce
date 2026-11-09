@@ -10,7 +10,7 @@ import ProductCard from "../ProductCard";
 
 export default function Products() {
   const { productsResponse, isLoading } = useProducts();
-
+console.log("AAAAAAAAAAAAA");
   return (
     <section id="products">
       <article className="w-full px-5 my-5">

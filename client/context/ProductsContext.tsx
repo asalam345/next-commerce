@@ -77,7 +77,7 @@ export function ProductsProvider({ children }: ProductsContextProvider) {
 
   async function fetchProducts() {
     setIsLoading(true);
-
+console.log(process.env.NEXT_PUBLIC_API_URL);
     await axios
       .get(process.env.NEXT_PUBLIC_API_URL + "/products", {
         params: {

@@ -32,6 +32,20 @@ export default function Gallery({ images }: GalleryProps) {
     }
   };
 
+    if (!images || images.length === 0) {
+    return (
+      <div className="relative aspect-square max-h-[600px] w-full h-full overflow-hidden select-none">
+        <Image
+          fill
+          src="/assets/logo.png"
+          alt="Image"
+          className="object-contain pointer-events-none"
+          sizes="(max-width: 480px), 70vw, 100vw"
+          priority
+        />
+      </div>
+    );
+  }
   return (
     <div className="relative aspect-square max-h-[600px] w-full h-full overflow-hidden select-none">
       <Image

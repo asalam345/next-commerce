@@ -95,14 +95,15 @@ export default function CheckoutForm() {
       className="max-h-[600px] p-1 scrollbar-cart overflow-y-auto"
     >
       <div className="flex flex-col gap-2">
-        <UserAddress
+        {/* <UserAddress
           fullName={user?.address?.fullName as string}
           contactNumber={user?.address?.contactNumber as string}
           country={user?.address?.country as string}
           city={user?.address?.city as string}
           addressLine={user?.address?.addressLine as string}
           addressLineSecond={user?.address?.addressLineSecond as string}
-        />
+        /> */}
+        <UserAddress />
         <div className="flex justify-center items-center whitespace-nowrap text-gray-700 text-sm gap-2">
           <div className="w-full h-[1px] bg-gray-200" />
           <span>Payment Information</span>

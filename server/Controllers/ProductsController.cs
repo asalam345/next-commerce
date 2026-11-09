@@ -2,11 +2,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-
 using server.Data;
 using server.DTOs;
 using server.Models;
-
+using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Formats.Webp;
 
 namespace server.Controllers;
