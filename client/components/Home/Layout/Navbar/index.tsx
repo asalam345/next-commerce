@@ -44,8 +44,7 @@ export default function Navbar() {
             <div className="flex flex-row justify-between items-center my-1">
               <div
                 onClick={() => setCategoriesVisible(true)}
-                className="flex md:hidden items-center justify-center cursor-pointer"
-              >
+                className="flex md:hidden items-center justify-center cursor-pointer">
                 <AiOutlineMenu size={28} />
               </div>
               <MobileCategories

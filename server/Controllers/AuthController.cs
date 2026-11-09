@@ -8,6 +8,8 @@ using server.DTOs;
 
 namespace server.Controllers;
 
+[ApiController]
+[Route("api/[controller]")]
 public class AuthController : BaseController
 {
     private readonly UserManager<User> userManager;

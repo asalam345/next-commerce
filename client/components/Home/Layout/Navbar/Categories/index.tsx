@@ -20,12 +20,11 @@ export default function Categories() {
               className="border-b-2 border-[transparent] text-gray-600 hover:border-black hover:text-black cursor-pointer p-2"
               key={index}
             >
-              <Link
+              {/* <Link
                 className=" whitespace-nowrap text-sm font-semibold"
-                href={category as string}
-              >
+                href={category as string}> */}
                 {category}
-              </Link>
+              {/* </Link> */}
             </li>
           );
         })}
