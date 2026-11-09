@@ -39,14 +39,30 @@ export function ShoppingCartProvider({ children }: CartProvider) {
 
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const [cartItems, setCartItems] = useState(() => {
-    try {
-      const storedCart = localStorage.getItem("shop/cart");
-      return storedCart ? JSON.parse(storedCart) : [];
-    } catch (error) {
-      return [];
-    }
-  });
+  // const [cartItems, setCartItems] = useState(() => {
+  //   try {
+  //     const storedCart = localStorage.getItem("shop/cart");
+  //     return storedCart ? JSON.parse(storedCart) : [];
+  //   } catch (error) {
+  //     return [];
+  //   }
+  // });
+    const [cartItems, setCartItems] = useState<Cart[]>([]);
+
+    useEffect(() => {
+        try {
+            const storedCart = localStorage.getItem("shop/cart");
+            if (storedCart) {
+                setCartItems(JSON.parse(storedCart));
+            }
+        } catch (error) {
+            console.error("Failed to load cart:", error);
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem("shop/cart", JSON.stringify(cartItems));
+    }, [cartItems]);
 
   const openCart = () => setIsOpen(true);
   const closeCart = () => setIsOpen(false);
